@@ -14,6 +14,7 @@ export class DetailsComponent {
   @ViewChild('radListViewComponent', { static: false }) radListView: ElementRef<RadListView>;
   @ViewChild('label2', {static: false}) label2: ElementRef<Label>;
   @ViewChild('label1', {static: false}) label1: ElementRef<Label>;
+  showlistview = false;
 
   get dataItems(): ObservableArray<any> {
     return this._dataItems;
@@ -35,14 +36,14 @@ export class DetailsComponent {
   destroy() {
 
     console.log('Destroy details view');
-    this.radListView.nativeElement
-      .removeEventListener(RadListView.itemLoadingEvent +"," +
-        RadListView.loadedEvent +","+
-        RadListView.loadMoreDataRequestedEvent
-      );
-    this.radListView.nativeElement.disposeNativeView();
-    this.label1.nativeElement.disposeNativeView();
-    this.label2.nativeElement.disposeNativeView();
+    // this.radListView.nativeElement
+    //   .removeEventListener(RadListView.itemLoadingEvent +"," +
+    //     RadListView.loadedEvent +","+
+    //     RadListView.loadMoreDataRequestedEvent
+    //   );
+    // this.radListView.nativeElement.disposeNativeView();
+    // this.label1.nativeElement.disposeNativeView();
+    // this.label2.nativeElement.disposeNativeView();
 
   }
 }

@@ -1,8 +1,8 @@
 <ActionBar title="RadListView Detail"></ActionBar>
 
-<GridLayout height="100%">
-
-            <RadListView #radListViewComponent [autoReuseViews]="true" [items]="dataItems">
+<GridLayout height="100%" rows="auto,*">
+<Button text="toggle" (tap)="showlistview=!showlistview"></Button>
+            <RadListView *ngIf="showlistview" row="1"  #radListViewComponent [items]="dataItems">
                 <ng-template tkListItemTemplate let-item="item">
                     <GridLayout>
                         <Label textAlignment="left" #label1 class="nameLabel" [text]="item.name"></Label>
@@ -10,4 +10,9 @@
                     </GridLayout>
                 </ng-template>
             </RadListView>
+            <!-- <Label *ngIf="showlistview" text="lbl" row="1"></Label> -->
+<!-- 
+            <RadListView *ngIf="showlistview" row="1" [items]="dataItems">
+
+            </RadListView> -->
 </GridLayout>
